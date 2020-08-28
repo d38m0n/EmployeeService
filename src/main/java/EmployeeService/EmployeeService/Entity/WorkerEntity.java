@@ -1,21 +1,24 @@
 package EmployeeService.EmployeeService.Entity;
 
-import EmployeeService.EmployeeService.Enum.Role;
+import EmployeeService.EmployeeService.Enum.RoleWorker;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class UserEntity {
+public class WorkerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUser;
     private String login;
-    private Role role;
+    private RoleWorker role;
     private String pwd;
     private String email;
+
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    private CompanyEntity company;
 
     @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private EmployeeDataEntity employeeData;
@@ -43,11 +46,11 @@ public class UserEntity {
         this.login = login;
     }
 
-    public Role getRole() {
+    public RoleWorker getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(RoleWorker role) {
         this.role = role;
     }
 
@@ -81,5 +84,13 @@ public class UserEntity {
 
     public void setCommissions(List<CommissionEntity> commissions) {
         this.commissions = commissions;
+    }
+
+    public CompanyEntity getCompany() {
+        return company;
+    }
+
+    public void setCompany(CompanyEntity company) {
+        this.company = company;
     }
 }

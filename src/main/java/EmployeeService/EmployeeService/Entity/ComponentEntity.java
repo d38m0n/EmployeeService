@@ -13,13 +13,13 @@ public class ComponentEntity {
     private String serialNumber;
     private String pratNumber;
     private String addDate;
+    private String useDate;
     private BigDecimal prince;
     private String machineModel;
-    private String useDate;
     private String place;
 
     @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    private UserEntity user;
+    private WorkerEntity user;
 
     @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private CommissionEntity commission;
@@ -90,11 +90,11 @@ public class ComponentEntity {
         this.place = place;
     }
 
-    public UserEntity getUser() {
+    public WorkerEntity getUser() {
         return user;
     }
 
-    public void setUser(UserEntity user) {
+    public void setUser(WorkerEntity user) {
         this.user = user;
     }
 

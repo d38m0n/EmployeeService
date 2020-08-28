@@ -1,4 +1,4 @@
 package EmployeeService.EmployeeService.Enum;
 
-public enum Role {
+public enum RoleWorker {
 }

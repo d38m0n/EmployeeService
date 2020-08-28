@@ -11,10 +11,10 @@ public class CompanyEntity {
     private String nameCompany;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
-    @JoinTable(name = "company_user",
+    @JoinTable(name = "company_worker",
             joinColumns = {@JoinColumn(name = "company_id")},
-            inverseJoinColumns = {@JoinColumn(name = "user_id")})
-    private List<UserEntity> users = new ArrayList<>();
+            inverseJoinColumns = {@JoinColumn(name = "worker_id")})
+    private List<WorkerEntity> workers = new ArrayList<>();
 
     @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
     @JoinTable(name = "company_machine",
@@ -50,13 +50,6 @@ public class CompanyEntity {
         this.nameCompany = nameCompany;
     }
 
-    public List<UserEntity> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<UserEntity> users) {
-        this.users = users;
-    }
 
     public List<MachineEntity> getMachines() {
         return machines;
