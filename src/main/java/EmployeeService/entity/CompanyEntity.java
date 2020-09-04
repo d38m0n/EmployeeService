@@ -1,14 +1,18 @@
-package EmployeeService.EmployeeService.Entity;
+package EmployeeService.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
 @Entity
 public class CompanyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCompany;
-    private String nameCompany;
+    private String fullName;
+
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    private AddressEntity addressEntity;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
     @JoinTable(name = "company_worker",
@@ -23,55 +27,32 @@ public class CompanyEntity {
     private List<MachineEntity> machines = new ArrayList<>();
 
     @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
+    @JoinTable(name = "company_client",
+            joinColumns = {@JoinColumn(name = "company_id")},
+            inverseJoinColumns = {@JoinColumn(name = "client_id")})
+    private List<ClientEntity> clients = new ArrayList<>();
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
     @JoinTable(name = "company_component",
             joinColumns = {@JoinColumn(name = "company_id")},
             inverseJoinColumns = {@JoinColumn(name = "component_id")})
     private List<ComponentEntity> components = new ArrayList<>();
 
     @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
-    @JoinTable(name = "company_commission",
+    @JoinTable(name = "company_car",
             joinColumns = {@JoinColumn(name = "company_id")},
-            inverseJoinColumns = {@JoinColumn(name = "commission_id")})
-    private List<CommissionEntity> commissions = new ArrayList<>();
+            inverseJoinColumns = {@JoinColumn(name = "car_id")})
+    private List<CarEntity> cars = new ArrayList<>();
 
-    public Long getIdCompany() {
-        return idCompany;
-    }
+    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
+    @JoinTable(name = "company_jobsheet",
+            joinColumns = {@JoinColumn(name = "company_id")},
+            inverseJoinColumns = {@JoinColumn(name = "jobsheet_id")})
+    private List<JobsheetEntity> jobsheets = new ArrayList<>();
 
-    public void setIdCompany(Long idCompany) {
-        this.idCompany = idCompany;
-    }
-
-    public String getNameCompany() {
-        return nameCompany;
-    }
-
-    public void setNameCompany(String nameCompany) {
-        this.nameCompany = nameCompany;
-    }
-
-
-    public List<MachineEntity> getMachines() {
-        return machines;
-    }
-
-    public void setMachines(List<MachineEntity> machines) {
-        this.machines = machines;
-    }
-
-    public List<ComponentEntity> getComponents() {
-        return components;
-    }
-
-    public void setComponents(List<ComponentEntity> components) {
-        this.components = components;
-    }
-
-    public List<CommissionEntity> getCommissions() {
-        return commissions;
-    }
-
-    public void setCommissions(List<CommissionEntity> commissions) {
-        this.commissions = commissions;
-    }
+    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
+    @JoinTable(name = "company_service",
+            joinColumns = {@JoinColumn(name = "company_id")},
+            inverseJoinColumns = {@JoinColumn(name = "service_id")})
+    private List<ServiceEntity> services = new ArrayList<>();
 }
