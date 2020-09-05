@@ -1,4 +1,4 @@
-package EmployeeService.typeEnum;
+package EmployeeService.statusE;
 
 public enum ComponentStatus {
     MAGAZINE,

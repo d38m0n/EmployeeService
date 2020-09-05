@@ -1,13 +1,20 @@
 package EmployeeService.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import EmployeeService.typeE.CarType;
+import EmployeeService.typeE.FoundType;
+
+import javax.persistence.*;
 
 @Entity
 public class CarEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_car;
+    private String brandCar;
+    private String modelCar;
+    private String numberReg;
+    private CarType carType;
+    private FoundType foundType;
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    private WorkerEntity workerEntity;
 }

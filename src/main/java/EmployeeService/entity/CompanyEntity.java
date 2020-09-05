@@ -55,4 +55,10 @@ public class CompanyEntity {
             joinColumns = {@JoinColumn(name = "company_id")},
             inverseJoinColumns = {@JoinColumn(name = "service_id")})
     private List<ServiceEntity> services = new ArrayList<>();
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY)
+    @JoinTable(name = "company_storage-site",
+            joinColumns = {@JoinColumn(name = "company_id")},
+            inverseJoinColumns = {@JoinColumn(name = "storage-site_id")})
+    private List<StorageSiteEntity> storageSites = new ArrayList<>();
 }

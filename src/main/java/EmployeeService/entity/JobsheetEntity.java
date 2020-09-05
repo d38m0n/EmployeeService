@@ -1,8 +1,8 @@
 package EmployeeService.entity;
 
 
-import EmployeeService.typeEnum.ServicePriority;
-import EmployeeService.typeEnum.ServiceType;
+import EmployeeService.statusE.ServicePriority;
+import EmployeeService.typeE.ServiceType;
 
 import javax.persistence.*;
 import java.util.ArrayList;

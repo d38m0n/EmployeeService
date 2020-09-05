@@ -1,7 +1,6 @@
 package EmployeeService.entity;
 
-import EmployeeService.typeEnum.WorkPosition;
-import EmployeeService.typeEnum.WorkerRole;
+import EmployeeService.typeE.WorkerRole;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -21,7 +20,6 @@ public class WorkerEntity {
 
     @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     private AddressEntity addressEntity;
-    private WorkPosition position;
     private WorkerRole role;
     private BigDecimal salary;
     private String join;

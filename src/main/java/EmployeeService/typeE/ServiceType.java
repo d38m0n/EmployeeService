@@ -1,4 +1,4 @@
-package EmployeeService.typeEnum;
+package EmployeeService.typeE;
 
 public enum ServiceType {
     GUARANTEE,
