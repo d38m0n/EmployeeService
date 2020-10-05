@@ -2,5 +2,9 @@ package  EmployeeService.model.permanent.statusE;
 
 public enum ServicePriority {
     LOW,
-    MEDIUM;
+    MEDIUM,
+    NORMAL,
+    PREMIUM,
+    SUPER_PREMIUM,
+    DANGER;
 }

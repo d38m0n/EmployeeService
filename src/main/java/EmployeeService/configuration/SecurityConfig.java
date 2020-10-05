@@ -15,8 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -43,18 +42,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("User")
-//                .password(passwordEncoder.encode("a"))
-//                .roles("USER")
-//                .and()
-//                .withUser("SuperAdmin")
-//                .password(passwordEncoder.encode("s"))
-//                .roles("USER", "ADMIN","SUPERADMIN");
-//        auth.jdbcAuthentication()
-//                .usersByUsernameQuery("SELECT login, password, 1 from USER_ENTITY where login=?")
-//                .authoritiesByUsernameQuery("SELECT login, role, 1, from USER_ENTITY  where login=?")
-//                .dataSource(jdbcTemplate.getDataSource())
-//                .passwordEncoder(passwordEncoder);
+        auth.inMemoryAuthentication()
+                .withUser("User")
+                .password(passwordEncoder.encode("a"))
+                .roles("USER")
+                .and()
+                .withUser("SuperAdmin")
+                .password(passwordEncoder.encode("s"))
+                .roles("USER", "ADMIN","SUPERADMIN");
+
     }
 }

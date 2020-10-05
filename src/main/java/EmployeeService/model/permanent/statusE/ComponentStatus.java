@@ -5,4 +5,7 @@ public enum ComponentStatus {
     TRANSPORT,
     USED,
     BLOCK,
+    FREE,
+    RESERVATION,
+    BUYING;
 }

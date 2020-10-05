@@ -1,31 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head id="header" class="alt" th:include="static :: link"/>
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head id="header" class="alt" th:include="include/link:: link">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-<div id="menu" class="alt" th:include="menu :: menu"/>
-<div id="includedContent"></div>
-<div id="startPanel" class="container-fluid p-4" style="  position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    width:350px;
-    transform: translate(-50%, -50%);
-    opacity: 80%;
-    border-radius: 5px;">
-<form method="get" action="/client">
-        <div class="row">
-            <div class="col-9 p-0">
-                <input name="id_client" type="text" class="form-control" placeholder="ID CLIENT">
-            </div>
-            <div class="col-3 p-0">
-                <button type="submit" class="btn btn-warning">Znajdź</button>
 
-            </div>
-        </div>
-    </form>
+<div class="container-fluid">
+
+    <div class="d-flex bg-secondary">
+        <div class="p-2 bg-info order-3">Flex item 1</div>
+        <div class="p-2 bg-warning order-2">Flex item 2</div>
+        <div class="p-2 bg-primary order-1">Flex item 3</div>
+    </div>
 
 </div>
+
 </body>
-<footer class="alt" th:include="footer :: footer"/>
+<footer th:include="include/js :: js"></footer>
 </html>
