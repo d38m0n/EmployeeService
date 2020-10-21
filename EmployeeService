@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-21T18:22:26.084Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36 OPR/71.0.3770.234" etag="zYugZgFMdvbzT-45bk3o" version="13.8.1" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2020-10-21T18:33:46.674Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36 OPR/71.0.3770.234" etag="OfmuO5qa1FI4_t96JHi9" version="13.8.1" type="github" pages="6">
   <diagram id="XBxeUoRxlVFe8W4mtVjZ" name="Page_LOG">
     <mxGraphModel dx="782" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -503,7 +503,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="DataBase" id="42789a77-a242-8287-6e28-9cd8cfd52e62">
-    <mxGraphModel dx="1303" dy="965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1235" dy="730" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
